@@ -4,7 +4,7 @@ echo "</br>";
 
 
 // The MySQL service named in the docker-compose.yml.
-$host = 'db';
+$host = 'teamdb';
 
 // Database user name
 $user = 'lionUser';
