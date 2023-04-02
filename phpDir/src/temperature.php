@@ -53,6 +53,7 @@
     }
     ?>
     <div id ="box">
+        <h1>Temperature Convertor</h1>
 	    <form class = "tempForm" action="temperature.php" method="POST">
             <div>
                 <div><label for="input_temperature_type">Choose Input Type </label></div>   
@@ -64,13 +65,12 @@
                 </select>        
             </div>
             <div class = "temptatureInput">
-            <label for="input">Insert Temperature</label> </div>
-            <div class="tempValue">
+                <label for="input">Insert Temperature</label> 
                 <input type="text" name="$tempValue">
             </div>
             
             <div>
-                <div><label for="output_temperature_type">Choose Input Type </label></div>   
+                <div><label for="output_temperature_type">Choose Output Type </label></div>   
                 <select name="output_temperature_type">
                     <option value="choose">Choose</option>
                     <option value="fahrenheit">Fahrenheit</option>
@@ -78,8 +78,10 @@
                     <option value="kelvin">Kelvin</option>
                 </select>
             </div>
+            <div id="btn">
                 <button class="convertBtn" type="submit">Convert</button>
                 <button class="reset">Reset</button>
+            </div>
             
         </form>    
         <div class="tempResult">
