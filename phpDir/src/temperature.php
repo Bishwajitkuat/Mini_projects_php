@@ -52,33 +52,39 @@
         return $celsius ;
     }
     ?>
-    <div class ="tempDiv">
-	    <form class = "formDiv" action="temperature.php" method="POST">
-            <div class = "temptatureInput">
-            <label for="input">Input Temperature</label> </div>
+    <div id ="box">
+	    <form class = "tempForm" action="temperature.php" method="POST">
             <div>
-                <select name="input_temperature_type">
-                    <option value="choose">Choose Input Type</option>
+                <div><label for="input_temperature_type">Choose Input Type </label></div>   
+                <select name="input_temperature_type"> 
+                    <option value="choose">Choose</option>
                     <option value="fahrenheit">Fahrenheit</option>
                     <option value="celsius">Celsius</option>
                     <option value="kelvin"> Kelvin</option>
                 </select>        
             </div>
+            <div class = "temptatureInput">
+            <label for="input">Insert Temperature</label> </div>
             <div class="tempValue">
                 <input type="text" name="$tempValue">
             </div>
+            
             <div>
+                <div><label for="output_temperature_type">Choose Input Type </label></div>   
                 <select name="output_temperature_type">
-                    <option value="choose">Choose Output Type</option>
+                    <option value="choose">Choose</option>
                     <option value="fahrenheit">Fahrenheit</option>
                     <option value="celsius">Celsius</option>
                     <option value="kelvin">Kelvin</option>
                 </select>
             </div>
-                <button class="convert" type="submit" name="convert" >Convert</button>
-
+                <button class="convertBtn" type="submit">Convert</button>
+                <button class="reset">Reset</button>
+            
+        </form>    
+        <div class="tempResult">
             <?php
-            if(isset($_POST['convert'])) {
+            if($_SERVER["REQUEST_METHOD"] === "POST") {
             
             $input_temperature_type=$_POST['input_temperature_type'];
             $output_temperature_type=$_POST['output_temperature_type'];
@@ -132,11 +138,9 @@
                     echo "$tempValue Kelvin";
                 }
             } 
-            }?>
-		</form>
+            
+            }?>   
+        </div>	
     </div>
 </body>
 </html> 
-    
-</body>
-</html>
