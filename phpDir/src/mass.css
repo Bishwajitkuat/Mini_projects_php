@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#massConverter {
+  margin-top: 2rem;
+  background-color: aliceblue;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #333;
+  border-style: solid;
+  width: 450px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mConverterText {
+  margin-top: 1rem;
+}
+
+.units {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+input,
+.outputResult {
+  background-color: white;
+  width: 100px;
+  height: 20px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #333;
+  border-style: solid;
+}
+
+.inputBox,
+.outputBlock {
+  margin-top: 0.5rem;
+}
+
+.leftUnit {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.outputBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.outputText {
+  margin-left: 0.2rem;
+}
+
+.arrowBox {
+  display: flex;
+  align-items: end;
+}
+
+.arrow {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+}
+
+#convertButton {
+  width: 90px;
+  height: 30px;
+  margin-top: 2rem;
+}
