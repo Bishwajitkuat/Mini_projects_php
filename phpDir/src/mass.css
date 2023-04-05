@@ -4,12 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  background-color: blanchedalmond;
-}
-
 #massConverter {
   margin-top: 2rem;
   background-color: aliceblue;
@@ -21,7 +15,13 @@ body {
   height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -29,14 +29,14 @@ body {
   margin-top: 1rem;
 }
 
-#units {
+.units {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
 }
 
 input,
-#outputResult {
+.outputResult {
   background-color: white;
   width: 100px;
   height: 20px;
@@ -46,40 +46,40 @@ input,
   border-style: solid;
 }
 
-form,
-#outputBlock {
-  margin-top: 1rem;
+.inputBox,
+.outputBlock {
+  margin-top: 0.5rem;
 }
 
-#leftUnit {
+.leftUnit {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
 }
 
-#outputBlock {
+.outputBlock {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-#outputText {
+.outputText {
   margin-left: 0.2rem;
 }
 
-#switchButton {
-  width: 40px;
-  height: 80px;
-  margin: 0 1rem;
-}
-
-#convertButton {
-  width: 70px;
-  height: 30px;
-  margin: 2rem 0;
+.arrowBox {
+  display: flex;
+  align-items: end;
 }
 
 .arrow {
+  margin: 0 1rem;
   font-size: 1.5rem;
+}
+
+#convertButton {
+  width: 90px;
+  height: 30px;
+  margin-top: 2rem;
 }

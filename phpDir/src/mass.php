@@ -10,33 +10,61 @@
 <body>
   <div id="massConverter">
     <h1 id="mConverterText">Mass converter</h1>
-    <div id="units">
-      <div id="leftUnit">
-        <p id="leftUnitText">
-          <?php 
-            $leftUnit = "Kilos";
-            echo "$leftUnit";
-          ?>
-        </p>
-        <form method="post">
-          <input id="form" name="form" type="number">
-          <label for="form">kg</label>
-        </form>
-      </div>
-      <button type="submit" id="switchButton">
-        <p class="arrow">&#10230</p>
-        <p>TO</p>
-        <p class="arrow">&#10229</p>
-      </button>
-      <div id="rightUnit">
-        <p id="rightUnitText">Grams</p>
-        <div id="outputBlock">
-          <div id="outputResult"></div>
-          <div id="outputText">gr</div>
+    <form action="mass.php" method="post">
+      <div class="units">
+        <div class="leftUnit">
+          <p class="leftUnitText">Kilos</p>
+          <div class="inputBox">
+            <input id="kilosInput" name="kilosInput" type="number">
+            <label for="form">kg</label>
+          </div>
+        </div>
+        <div class="arrowBox">
+          <p class="arrow">&#10230</p>
+        </div>
+        <div class="rightUnit">
+          <p class="rightUnitText">Grams</p>
+          <div class="outputBlock">
+            <div class="outputResult">
+            <?php 
+              if($_SERVER["REQUEST_METHOD"] === "POST"){
+                if ($_POST['kilosInput']) {
+                  echo (int)$_POST['kilosInput']*1000;
+                }
+              }
+            ?>
+            </div>
+            <div class="outputText">gr</div>
+          </div>
         </div>
       </div>
-    </div>
-    <form method="post">
+      <div class="units">
+        <div class="leftUnit">
+          <p class="leftUnitText">Grams</p>
+          <div class="inputBox">
+            <input id="gramsInput" name="gramsInput" type="number">
+            <label for="form">gr</label>
+          </div>
+        </div>
+        <div class="arrowBox">
+          <p class="arrow">&#10230</p>
+        </div>
+        <div class="rightUnit">
+          <p class="rightUnitText">Kilos</p>
+          <div class="outputBlock">
+            <div class="outputResult">
+            <?php 
+              if($_SERVER["REQUEST_METHOD"] === "POST"){
+                if ($_POST['gramsInput']) {
+                  echo (int)$_POST['gramsInput']/1000;
+                }
+              }
+            ?>
+            </div>
+            <div class="outputText">kg</div>
+          </div>
+        </div>
+      </div>
       <button type="submit" name="convert" id="convertButton">Convert</button>
     </form>
   </div>
