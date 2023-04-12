@@ -1,0 +1,10 @@
+.taskDisplayBody form {
+  border: 1px solid black;
+  max-width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
