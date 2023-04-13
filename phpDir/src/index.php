@@ -32,7 +32,7 @@
 if (isset($_POST['tempSubmit'])) {
     $celsius = $_POST['celsiusToF'];
     $fahrenheit = ($celsius * 1.8) + 32;
-    echo "<div class='temp-result'><p>$celsius&deg;C = $fahrenheit&deg;F</p></div>";
+    echo "<p>$celsius&deg;C = $fahrenheit&deg;F</p>";
 }
 ?>
 
@@ -44,7 +44,7 @@ if (isset($_POST['tempSubmit'])) {
 if (isset($_POST['kelvinSubmit'])) {
     $celsius = $_POST['celsiusToK'];
     $kelvin = $celsius + 273.15;
-    echo "<div class='temp-result'><p>$celsius&deg;C = $kelvin K</p></div>";
+    echo "<p>$celsius&deg;C = $kelvin K</p>";
 }
 ?>
 </form>
@@ -62,7 +62,7 @@ if (isset($_POST['kelvinSubmit'])) {
 if (isset($_POST['speedSubmit'])) {
     $kmh = $_POST['kmhToMs'];
     $ms = $kmh / 3.6;
-    echo "<div class='speed-result'><p>$kmh km/h = $ms m/s</p></div>";
+    echo "<p>$kmh km/h = $ms m/s</p>";
 }
 ?>
 
@@ -74,7 +74,7 @@ if (isset($_POST['speedSubmit'])) {
 if (isset($_POST['knotsSubmit'])) {
     $kmh = $_POST['kmhToKnots'];
     $knots = $kmh / 1.852;
-    echo "<div class='speed-result'><p>$kmh km/h = $knots knots</p></div>";
+    echo "<p>$kmh km/h = $knots knots</p>";
 }
 ?>
 </form>
