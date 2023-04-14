@@ -1,0 +1,57 @@
+body {
+  background-color: black;
+}
+
+main {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  width: 500px;
+}
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.taskDisplayBody form {
+  background-color: white;
+  box-shadow: -5px 5px 10px greenyellow;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.editDiv,
+.addDiv {
+  background-color: white;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  box-shadow: -5px 5px 10px greenyellow;
+}
+.addDiv form,
+.editDiv form {
+  display: flex;
+  justify-content: space-between;
+}
+input {
+  width: 75%;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+button {
+  width: 4rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: greenyellow;
+  color: black;
+  border: none;
+}
+.deleteBtn {
+  background-color: rgb(255, 0, 0);
+}
