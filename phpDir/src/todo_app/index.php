@@ -54,9 +54,7 @@ if (isset($_POST["editeTask"])) {
     $sub_quary = "SELECT description FROM task WHERE id = '$id' ";
     $sub_result = mysqli_query($connection, $sub_quary);
     $description = mysqli_fetch_assoc($sub_result)["description"];
-    header('Access-Control-Allow-Origin: *');
-    header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');"
+    echo "
       <div class='editDiv'>
         <form action='index.php' method='POST' >
         <input type='text' value='$description' name='update'>
