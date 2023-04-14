@@ -15,8 +15,6 @@ if ($connection->connect_error) {
     $insert_result = mysqli_query($connection, $insert_quary);
     if (!$insert_result) {
         die("query failed");
-    } else {
-        echo "query success!";
     }
 }?>
 <!-- removing task -->
@@ -42,6 +40,7 @@ if (isset($_POST["removeTask"])) {
 </head>
 <body>
   <main>
+    <h1>To Dos</h1>
   <div class="addDiv">
   <form action="index.php" method="post">
     <input type="text" name="task" placeholder="Task description">
@@ -67,7 +66,6 @@ if (isset($_POST["editeTask"])) {
 if (isset($_POST["updateTask"])) {
     $id = $_POST["updateTask"];
     $description = $_POST["update"];
-    echo $id, $description;
     $update_quary = "UPDATE task SET description = '$description' WHERE id = '$id'";
     $update_result = mysqli_query($connection, $update_quary);
 }
