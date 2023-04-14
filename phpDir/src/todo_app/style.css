@@ -1,10 +1,54 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+main {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  width: 500px;
+}
+
 .taskDisplayBody form {
+  background-color: gray;
   border: 1px solid black;
-  max-width: 50vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
+}
+.editDiv,
+.addDiv {
+  background-color: gray;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+.addDiv form,
+.editDiv form {
+  display: flex;
+  justify-content: space-between;
+}
+input {
+  width: 75%;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+button {
+  width: 4rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: aquamarine;
+  color: white;
+  border: none;
+}
+.deleteBtn {
+  background-color: red;
 }

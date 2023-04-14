@@ -8,7 +8,28 @@ if ($connection->connect_error) {
     die("connection failed" . $connection->connect_error);
 }
 ?>
-
+<!-- adding task -->
+<?php if (isset($_POST["addTask"])) {
+    $task = $_POST["task"];
+    $insert_quary = "INSERT INTO `task` (description) VALUES('$task')";
+    $insert_result = mysqli_query($connection, $insert_quary);
+    if (!$insert_result) {
+        die("query failed");
+    } else {
+        echo "query success!";
+    }
+}?>
+<!-- removing task -->
+<?php
+if (isset($_POST["removeTask"])) {
+    $id = $_POST["removeTask"];
+    $delete_query = "DELETE FROM task WHERE id = '$id'";
+    $delete_result = mysqli_query($connection, $delete_query);
+    if (!$delete_result) {
+        die("delete query failed!");
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,10 +41,13 @@ if ($connection->connect_error) {
   <title>ToDo App</title>
 </head>
 <body>
-<form action="" method="post">
-  <input type="text" name="task" placeholder="Task description">
-  <button type="submit" name="addTask">Add</button>
-</form>
+  <main>
+  <div class="addDiv">
+  <form action="index.php" method="post">
+    <input type="text" name="task" placeholder="Task description">
+    <button type="submit" name="addTask">Add</button>
+  </form>
+</div>
 <!-- edite task -->
 <?php
 if (isset($_POST["editeTask"])) {
@@ -33,7 +57,7 @@ if (isset($_POST["editeTask"])) {
     $description = mysqli_fetch_assoc($sub_result)["description"];
     echo "
       <div class='editDiv'>
-        <form action='' method='POST' >
+        <form action='index.php' method='POST' >
         <input type='text' value='$description' name='update'>
         <button type='submit' value='$id' name='updateTask'>Save</button>
         </form>
@@ -58,42 +82,17 @@ while ($row = mysqli_fetch_assoc($select_result)) {
     $id = $row["id"];
     $description = $row["description"];
     echo "
-    <form action='' method='POST'>
+    <form action='index.php' method='POST'>
       <p>$description</p>
       <div>
-      <button type='submit' name='editeTask' value='$id'>Edite</button>
-      <button type='submit' name='removeTask' value='$id'>X</button>
+      <button type='submit' name='editeTask' value='$id'>&#x270D;</button>
+      <button type='submit' name='removeTask' class='deleteBtn' value='$id'>&#x1f5d1;</button>
       </div>
     </form>";
 }
 ?>
 
 </div>
+  </main>
 </body>
 </html>
-<!-- adding task -->
-<?php if (isset($_POST["addTask"])) {
-    $task = $_POST["task"];
-    $insert_quary = "INSERT INTO `task` (description) VALUES('$task')";
-    $insert_result = mysqli_query($connection, $insert_quary);
-    if (!$insert_result) {
-        die("query failed");
-    } else {
-        echo "query success!";
-    }
-}?>
-
-<!-- removing task -->
-
-<?php
-if (isset($_POST["removeTask"])) {
-    $id = $_POST["removeTask"];
-    $delete_query = "DELETE FROM task WHERE id = '$id'";
-    $delete_result = mysqli_query($connection, $delete_query);
-    if (!$delete_result) {
-        die("delete query failed!");
-    }
-}
-?>
-
-<!-- edite task -->
