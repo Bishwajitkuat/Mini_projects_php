@@ -10,7 +10,7 @@ services:
     volumes:
       - ./phpDir/src:/var/www/html/
     ports:
-      - 8005:80
+      - 8001:80
   teamdb:
     container_name: teamdb
     image: mysql
@@ -21,11 +21,13 @@ services:
       MYSQL_USER: lionUser
       MYSQL_PASSWORD: lionPass
     ports:
-      - "9906:3306"
+      - "3307:3306"
+    volumes:
+      - ./:/docker-entrypoint-initdb.d
   teamphpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
-      - "9080:80"
+      - "9081:80"
     restart: always
     environment:
       PMA_HOST: teamdb
