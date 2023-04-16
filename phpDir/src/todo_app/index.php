@@ -11,6 +11,7 @@ if ($connection->connect_error) {
 <!-- adding task -->
 <?php if (isset($_POST["addTask"])) {
     $task = $_POST["task"];
+    $task = str_replace("'","''",$task);
     $insert_quary = "INSERT INTO `task` (description) VALUES('$task')";
     $insert_result = mysqli_query($connection, $insert_quary);
     if (!$insert_result) {
