@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(62, 160, 252);
+    font-family:'Raleway', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h2{
+    margin: 2rem;
+    font-weight: bolder;
+}
+.container{
+    background-color: rgb(201, 194, 184);
+    border-radius: 0.5rem;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow:0 10px 10px;
+   
+}
+.form-items {
+    margin: 2rem;
+}
+
+button{
+    display: flex;
+    padding: 2px;
+    align-items: center;
+}
+
+.list{
+    margin-right: 2rem;
+}
