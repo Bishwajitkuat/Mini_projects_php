@@ -12,8 +12,8 @@ if ($connection->connect_error) {
 <?php if (isset($_POST["addTask"])) {
     $task = $_POST["task"];
     $task = str_replace("'","''",$task);
-    $insert_quary = "INSERT INTO `task` (description) VALUES('$task')";
-    $insert_result = mysqli_query($connection, $insert_quary);
+    $insert_query = "INSERT INTO `task` (description) VALUES('$task')";
+    $insert_result = mysqli_query($connection, $insert_query);
     if (!$insert_result) {
         die("query failed");
     }
@@ -52,8 +52,8 @@ if (isset($_POST["removeTask"])) {
 <?php
 if (isset($_POST["editeTask"])) {
     $id = $_POST["editeTask"];
-    $sub_quary = "SELECT description FROM task WHERE id = '$id' ";
-    $sub_result = mysqli_query($connection, $sub_quary);
+    $sub_query = "SELECT description FROM task WHERE id = '$id' ";
+    $sub_result = mysqli_query($connection, $sub_query);
     $description = mysqli_fetch_assoc($sub_result)["description"];
     echo "
       <div class='editDiv'>
@@ -67,16 +67,16 @@ if (isset($_POST["editeTask"])) {
 if (isset($_POST["updateTask"])) {
     $id = $_POST["updateTask"];
     $description = $_POST["update"];
-    $update_quary = "UPDATE task SET description = '$description' WHERE id = '$id'";
-    $update_result = mysqli_query($connection, $update_quary);
+    $update_query = "UPDATE task SET description = '$description' WHERE id = '$id'";
+    $update_result = mysqli_query($connection, $update_query);
 }
 ?>
 
 <div class="taskDisplayBody">
   <!-- displaying task -->
   <?php
-$select_quary = "SELECT * FROM task";
-$select_result = mysqli_query($connection, $select_quary);
+$select_query = "SELECT * FROM task";
+$select_result = mysqli_query($connection, $select_query);
 while ($row = mysqli_fetch_assoc($select_result)) {
     $id = $row["id"];
     $description = $row["description"];
