@@ -1,6 +1,6 @@
 body{
     background-color: rgb(62, 160, 252);
-    font-family:'Raleway', sans-serif;
+    font-family:'Dosis', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,6 +11,7 @@ h2{
     margin: 2rem;
     font-weight: bolder;
 }
+
 .container{
     background-color: rgb(201, 194, 184);
     border-radius: 0.5rem;
@@ -20,20 +21,41 @@ h2{
     justify-content: center;
     align-items: center;
     margin: 1rem;
-    padding: 2rem;
-    box-shadow:0 10px 10px;
-   
+    padding: 1rem; 
 }
+
 .form-items {
     margin: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 button{
     display: flex;
     padding: 2px;
     align-items: center;
+    margin-left: 2rem;
+    background-color: rgb(218, 191, 243);
+    border-radius: 5px;
 }
 
 .list{
     margin-right: 2rem;
+}
+
+label{
+    font-weight: bold;
+}
+
+input{
+   height: 2rem; 
+   outline: none;
+   border-style: none none solid none;
+   background-color: rgb(201, 194, 184);
+}
+
+textarea{
+    outline: none;
+    border-style: none none solid none;
+    background-color: rgb(201, 194, 184);
 }
