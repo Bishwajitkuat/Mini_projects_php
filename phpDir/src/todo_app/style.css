@@ -8,6 +8,7 @@ main {
   box-sizing: border-box;
   width: 500px;
 }
+
 h1 {
   text-align: center;
   color: white;
@@ -15,7 +16,7 @@ h1 {
 
 .taskDisplayBody form {
   background-color: white;
-  box-shadow: -5px 5px 10px greenyellow;
+  box-shadow: -5px 5px 10px #333;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -24,6 +25,7 @@ h1 {
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
+
 .editDiv,
 .addDiv {
   background-color: white;
@@ -31,27 +33,32 @@ h1 {
   padding: 0.5rem;
   border-radius: 0.5rem;
   margin-top: 1rem;
-  box-shadow: -5px 5px 10px greenyellow;
+  box-shadow: -5px 5px 10px #efdb02;
 }
+
 .addDiv form,
 .editDiv form {
   display: flex;
   justify-content: space-between;
 }
+
 input {
   width: 75%;
   height: 2rem;
   border-radius: 0.5rem;
   border: none;
 }
+
 button {
   width: 4rem;
   height: 2rem;
   border-radius: 0.5rem;
-  background-color: greenyellow;
+  background-color: whitesmoke;
   color: black;
-  border: none;
+  border: solid;
+  border-color: green;
 }
+
 .deleteBtn {
-  background-color: rgb(255, 0, 0);
+  border-color: rgb(255, 0, 0);
 }
