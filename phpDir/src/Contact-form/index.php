@@ -97,7 +97,7 @@
     <?php
       
 
-      if($name && $email){
+      if($name && $email && $subject && $message){
       echo "<h3>Result Display</h3>";
       echo "Sender = $name " ;
       echo "<br>";
