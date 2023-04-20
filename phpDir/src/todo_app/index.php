@@ -50,23 +50,18 @@ if (isset($_POST["removeTask"])) {
 </div>
 <!-- edite task -->
 <?php
+$id_to_edit = 0;
 if (isset($_POST["editeTask"])) {
-    $id = $_POST["editeTask"];
-    $sub_query = "SELECT description FROM task WHERE id = '$id' ";
+    $id_to_edit = $_POST["editeTask"];
+    $sub_query = "SELECT description FROM task WHERE id = '$id_to_edit' ";
     $sub_result = mysqli_query($connection, $sub_query);
     $description = mysqli_fetch_assoc($sub_result)["description"];
-    echo "
-      <div class='editDiv'>
-        <form action='index.php' method='POST' >
-        <input type='text' value='$description' name='update'>
-        <button type='submit' value='$id' name='updateTask'>Save</button>
-        </form>
-      </div>";
 
 }
 if (isset($_POST["updateTask"])) {
     $id = $_POST["updateTask"];
     $description = $_POST["update"];
+    $description = str_replace("'","''",$description);
     $update_query = "UPDATE task SET description = '$description' WHERE id = '$id'";
     $update_result = mysqli_query($connection, $update_query);
 }
@@ -80,14 +75,26 @@ $select_result = mysqli_query($connection, $select_query);
 while ($row = mysqli_fetch_assoc($select_result)) {
     $id = $row["id"];
     $description = $row["description"];
-    echo "
-    <form action='index.php' method='POST'>
-      <p>$description</p>
-      <div>
-      <button type='submit' name='editeTask' value='$id'>&#x270D;</button>
-      <button type='submit' name='removeTask' class='deleteBtn' value='$id'>&#x1f5d1;</button>
-      </div>
-    </form>";
+    if ($id == $id_to_edit) {
+      $description = htmlspecialchars($description, ENT_QUOTES);
+      echo "
+        <form action='index.php' method='POST'>
+        <input type='text' value='$description' name='update'>
+        <div class='buttonsBox'>
+          <button type='submit' value='$id' name='updateTask'>Save</button>
+          <button type='submit' name='removeTask' class='deleteBtn' value='$id'>&#x1f5d1;</button>
+        </div>
+        </form>";
+    } else {
+        echo "
+        <form action='index.php' method='POST'>
+          <p>$description</p>
+          <div class='buttonsBox'>
+          <button type='submit' name='editeTask' value='$id'>&#x270D;</button>
+          <button type='submit' name='removeTask' class='deleteBtn' value='$id'>&#x1f5d1;</button>
+          </div>
+        </form>";
+    }
 }
 ?>
 
