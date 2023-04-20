@@ -11,6 +11,7 @@
   padding: 0;
   box-sizing: border-box;
   background-color: black;
+  width: 100vw;
   height: 7rem;
   padding: 2rem;
   display: flex;
@@ -42,6 +43,9 @@ body {
   background-image: url("./assets/background.jpg");
   background-size: cover;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h2 {
@@ -49,19 +53,23 @@ h2 {
   padding: 5px;
   margin: 5px;
 }
-.header {
-  background-color: black;
-}
+
 h1,
 h2 {
   color: #c2e4ef;
+  /* text-shadow: #9261e6 0 0 50em; */
+  text-shadow: 1px 1px 2px blue, 0 0 1em blue, 0 0 0.2em blue;
 }
 
 .header {
   display: flex;
   justify-content: center;
-  margin: 10px;
+  margin: 2rem;
   font-size: 2rem;
+}
+
+main {
+  width: 1400px;
 }
 
 .charts {
@@ -135,7 +143,7 @@ p {
   font-size: 1.4rem;
   padding: 5px;
   margin: 5px;
-  color: #c2e4ef;
+  color: #4bc3ea;
 }
 
 footer {
@@ -147,34 +155,3 @@ footer {
   bottom: 0;
 }
 
-/* CSS FOR Header */
-
-.header__nav {
-  color: white;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: black;
-  height: 7rem;
-  padding: 2rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.header__nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  list-style: none;
-}
-.header__nav ul li {
-  border: 2px solid white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-}
-.header__nav ul li a {
-  text-decoration: none;
-  font-size: 1.2rem;
-}

@@ -12,104 +12,102 @@
   </head>
    <body>
     <?php include "../header.php"?>
-    <header>
     <div class="header">
-    <h1>Conversion App</h1>
+        <h1>Conversion App</h1>
     </div>
-    </header>
 
 <main>
-<!--     Temp conversion, Cel to Far and Cel to Kel -->
 <div class="charts">
-<div class="temp">
-<h2>Temperature</h2>
-<form action="index.php" method="post">
-<p>Celsius to Fahrenheit</p>
-<input type="number" name="celsiusToF" />
-<button type="submit" name="tempSubmit">Convert</button>
+    <!--     Temp conversion, Cel to Far and Cel to Kel -->
+    <div class="temp">
+        <h2>Temperature</h2>
+        <form action="index.php" method="post">
+        <p>Celsius to Fahrenheit</p>
+        <input type="number" name="celsiusToF" />
+        <button type="submit" name="tempSubmit">Convert</button>
 
 
-<?php
-if (isset($_POST['tempSubmit'])) {
-    $celsius = $_POST['celsiusToF'];
-    $fahrenheit = ($celsius * 1.8) + 32;
-    echo "<p>$celsius&deg;C = $fahrenheit&deg;F</p>";
-}
-?>
+        <?php
+        if (isset($_POST['tempSubmit'])) {
+            $celsius = $_POST['celsiusToF'];
+            $fahrenheit = ($celsius * 1.8) + 32;
+            echo "<p>$celsius&deg;C = $fahrenheit&deg;F</p>";
+        }
+        ?>
 
-<p>Celsius to Kelvin</p>
-<input type="number" name="celsiusToK" />
-<button type="submit" name="kelvinSubmit">Convert</button>
+        <p>Celsius to Kelvin</p>
+        <input type="number" name="celsiusToK" />
+        <button type="submit" name="kelvinSubmit">Convert</button>
 
-<?php
-if (isset($_POST['kelvinSubmit'])) {
-    $celsius = $_POST['celsiusToK'];
-    $kelvin = $celsius + 273.15;
-    echo "<p>$celsius&deg;C = $kelvin K</p>";
-}
-?>
-</form>
-</div>
+        <?php
+        if (isset($_POST['kelvinSubmit'])) {
+            $celsius = $_POST['celsiusToK'];
+            $kelvin = $celsius + 273.15;
+            echo "<p>$celsius&deg;C = $kelvin K</p>";
+        }
+        ?>
+        </form>
+    </div>
 
-<!-- Speed conversion, KPH to MPS and KPH to KNOTS -->
-<div class="speed">
-<h2>Speed</h2>
-<form action="index.php" method="post">
-<p>Kilometers per hour to meters per second</p>
-<input type="number" name="kmhToMs" />
-<button type="submit" name="speedSubmit">Convert</button>
+    <!-- Speed conversion, KPH to MPS and KPH to KNOTS -->
+    <div class="speed">
+        <h2>Speed</h2>
+        <form action="index.php" method="post">
+        <p>Kilometers per hour to meters per second</p>
+        <input type="number" name="kmhToMs" />
+        <button type="submit" name="speedSubmit">Convert</button>
 
-<?php
-if (isset($_POST['speedSubmit'])) {
-    $kmh = $_POST['kmhToMs'];
-    $ms = $kmh / 3.6;
-    echo "<p>$kmh km/h = $ms m/s</p>";
-}
-?>
+        <?php
+        if (isset($_POST['speedSubmit'])) {
+            $kmh = $_POST['kmhToMs'];
+            $ms = $kmh / 3.6;
+            echo "<p>$kmh km/h = $ms m/s</p>";
+        }
+        ?>
 
-<p>Kilometers per hour to knots</p>
-<input type="number" name="kmhToKnots" />
-<button type="submit" name="knotsSubmit">Convert</button>
+        <p>Kilometers per hour to knots</p>
+        <input type="number" name="kmhToKnots" />
+        <button type="submit" name="knotsSubmit">Convert</button>
 
-<?php
-if (isset($_POST['knotsSubmit'])) {
-    $kmh = $_POST['kmhToKnots'];
-    $knots = $kmh / 1.852;
-    echo "<p>$kmh km/h = $knots knots</p>";
-}
-?>
-</form>
-</div>
+        <?php
+        if (isset($_POST['knotsSubmit'])) {
+            $kmh = $_POST['kmhToKnots'];
+            $knots = $kmh / 1.852;
+            echo "<p>$kmh km/h = $knots knots</p>";
+        }
+        ?>
+        </form>
+    </div>
 
-<!-- mass conversion, KG to G and G to KG -->
-<div class="mass">
-<h2>Mass</h2>
-<form action="index.php" method="post">
-<p>Kilograms to grams</p>
-<input type="number" name="kgToG" />
-<button type="submit" name="gramsSubmit">Convert</button>
+    <!-- mass conversion, KG to G and G to KG -->
+    <div class="mass">
+        <h2>Mass</h2>
+        <form action="index.php" method="post">
+        <p>Kilograms to grams</p>
+        <input type="number" name="kgToG" />
+        <button type="submit" name="gramsSubmit">Convert</button>
 
-<?php
-if (isset($_POST['gramsSubmit'])) {
-    $kg = $_POST['kgToG'];
-    $g = $kg * 1000;
-    echo "<p>$kg kg = $g g</p>";
-}
-?>
+        <?php
+        if (isset($_POST['gramsSubmit'])) {
+            $kg = $_POST['kgToG'];
+            $g = $kg * 1000;
+            echo "<p>$kg kg = $g g</p>";
+        }
+        ?>
 
-<p>Grams to kilograms</p>
-<input type="number" name="gToKg" />
-<button type="submit" name="kilosSubmit">Convert</button>
+        <p>Grams to kilograms</p>
+        <input type="number" name="gToKg" />
+        <button type="submit" name="kilosSubmit">Convert</button>
 
-<?php
-if (isset($_POST['kilosSubmit'])) {
-    $g = $_POST['gToKg'];
-    $kg = $g / 1000;
-    echo "<p>$g g = $kg kg</p>";
-}
-?>
-</form>
-</div>
+        <?php
+        if (isset($_POST['kilosSubmit'])) {
+            $g = $_POST['gToKg'];
+            $kg = $g / 1000;
+            echo "<p>$g g = $kg kg</p>";
+        }
+        ?>
+        </form>
+    </div>
 </div>
 
 <!-- Reset button using PHP -->
