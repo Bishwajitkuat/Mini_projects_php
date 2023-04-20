@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url('./assets/math_BG.avif');
+  background-image: url("./assets/math_BG.avif");
   background-size: cover;
   min-height: 100vh;
 }
@@ -40,21 +40,21 @@ h2 {
 }
 
 .temp {
-  background-image: url('./assets/blackboard.avif');
+  background-image: url("./assets/blackboard.avif");
   width: 400px;
   height: 400px;
   border: solid 3px rgb(255, 255, 255);
   border-radius: 10px;
 }
 .speed {
-  background-image: url('./assets/blackboard.avif');
+  background-image: url("./assets/blackboard.avif");
   width: 400px;
   height: 400px;
   border: solid 3px rgb(255, 255, 255);
   border-radius: 10px;
 }
 .mass {
-  background-image: url('./assets/blackboard.avif');
+  background-image: url("./assets/blackboard.avif");
   width: 400px;
   height: 400px;
   border: solid 3px rgb(255, 255, 255);
@@ -111,4 +111,36 @@ footer {
   text-align: center;
   position: fixed;
   bottom: 0;
+}
+
+/* CSS FOR Header */
+
+.header__nav {
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+  height: 7rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header__nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+}
+.header__nav ul li {
+  border: 2px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.header__nav ul li a {
+  text-decoration: none;
+  font-size: 1.2rem;
 }

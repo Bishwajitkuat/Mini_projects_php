@@ -11,6 +11,7 @@
     <title>Conversion Application</title>
   </head>
    <body>
+    <?php include "../header.php"?>
     <header>
     <div class="header">
     <h1>Conversion App</h1>
