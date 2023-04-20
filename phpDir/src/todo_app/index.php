@@ -36,10 +36,14 @@ if (isset($_POST["removeTask"])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>ToDo App</title>
 </head>
 <body>
+  <?php include "../header.php"?>
   <main>
     <h1>To Dos</h1>
   <div class="addDiv">
@@ -100,5 +104,6 @@ while ($row = mysqli_fetch_assoc($select_result)) {
 
 </div>
   </main>
+  <footer>Team Alpha Dogs 2023 &copy;</footer>
 </body>
 </html>

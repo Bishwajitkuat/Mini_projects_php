@@ -5,8 +5,43 @@
 }
 
 body {
-  background-color: black;
+  background: url("./assets/todo_background.jpg") top center/cover;
 }
+
+/* Style for header */
+.header__nav {
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+  width: 100vw;
+  height: 5rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header__nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+}
+.header__nav ul li {
+  border: 2px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.header__nav ul li a,
+.header__nav a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white;
+}
+/* end of header's style */
 
 main {
   margin: 0 auto;
@@ -15,31 +50,38 @@ main {
   width: 500px;
 }
 
-h1 {
+main h1 {
   text-align: center;
-  color: white;
+  color: rgb(2, 2, 2);
+  margin-top: 5rem ;
+  margin-bottom: 2rem; 
+}
+
+.taskDisplayBody {
+  margin-top: 3rem;
 }
 
 .taskDisplayBody form {
   background-color: white;
-  box-shadow: -5px 5px 10px #333;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 5px;
 }
 
 .editDiv,
 .addDiv {
   background-color: white;
+  margin-top: 1rem;
   width: 100%;
   padding: 0.5rem;
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-  box-shadow: -5px 5px 10px #efdb02;
+  border-radius: 5px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .addDiv form,
@@ -64,14 +106,25 @@ input {
 button {
   width: 4rem;
   height: 2rem;
-  border-radius: 0.5rem;
+  border-radius: 5px;
   background-color: whitesmoke;
   color: black;
   border: solid;
+  border-width: 1px;
   border-color: green;
   margin: 0 0.2rem;
 }
 
 .deleteBtn {
   border-color: rgb(255, 0, 0);
+}
+
+footer {
+  background-color: rgb(78, 78, 78);
+  color:aliceblue;
+  min-height: 20px;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
 }
