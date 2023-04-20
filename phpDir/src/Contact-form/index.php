@@ -30,9 +30,13 @@
     }
 
     if (empty($_POST["email"])) {
-      $emailError = 'Enter valid email';
+      $emailError = 'This field is required';
+    
     }else {
       $email = given_info($_POST["email"]);
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $emailError = "Enter valid email";
+      }
     }
    
     if (empty($_POST["subject"])) {
@@ -46,11 +50,12 @@
     }else {
       $message = given_info($_POST["message"]);
     }
-  }
 
+  }
   function given_info($data){
     return $data;
-  } 
+  }
+   
 ?>
 
   <div class="container">
@@ -59,27 +64,27 @@
     <form method="POST" action="index.php" class="form">
       <div class="form-items">
         <label for="name" class="list">Name</label>
-        <input type="text" class="form-input" id="name" name="name" value="<?php echo $name;?>">
+        <input type="text" class="form-input" id="name" name="name" value="" required>
        <?php echo $nameError;?>
         
       </div>
 
       <div class="form-items">
         <label for="email" class="list">Email</label>
-        <input type="text" class="form-input" id="email" name="email" value="<?php echo $email;?>">
+        <input type="email" class="form-input" id="email" name="email" value="" required>
         <?php echo $emailError;?>
       
       </div>
 
       <div class="form-items">
         <label for="subject" class="list">Subject</label>
-        <input type="text" class="form-input" id="subject" name="subject" value="<?php echo $subject;?>"></input>
+        <input type="text" class="form-input" id="subject" name="subject" value="" required></input>
         <?php echo $subjectError;?>
       </div>
 
       <div class="form-items">
         <label for="message" class="list">Message</label>
-        <textarea class="form-input" rows="5" cols="45" id="message" name="message" value="<?php echo $message;?>"></textarea>
+        <textarea class="form-input" rows="5" cols="45" id="message" name="message" value="" required></textarea>
         <?php echo $messageError;?>
       </div>
 
@@ -90,6 +95,9 @@
     </form>
 
     <?php
+      
+
+      if($name && $email){
       echo "<h3>Result Display</h3>";
       echo "Sender = $name " ;
       echo "<br>";
@@ -98,7 +106,8 @@
       echo  "Subject = $subject";
       echo "<br>";
       echo  "Message = $message";
-      
+      }
+  
     ?>
   </div>  
 </body>
