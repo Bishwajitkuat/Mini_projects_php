@@ -19,18 +19,28 @@
 
     <main>
         <div class="threeButtons">
+
+            <div class="convertorContainer">
             <form action="./convertors/index.php" method="post">
-                <button type="submit" name="Convertors">Convertors</button>
+                <button class="glowbtn" type="submit" name="Convertors">Convertors</button>
             </form>
+            </div>
+
+            <div class="formContainer">
             <form action="./Contact-form/index.php" method="post">
-                <button type="submit" name="ContactForm">Contact form</button>
+                <button class="glowbtn" type="submit" name="ContactForm">Contact form</button>
             </form>
+            </div>
+
+            <div class="todoContainer">
             <form action="./todo_app/index.php" method="post">
-                <button type="submit" name="ToDoApp">To Do App</button>
+                <button class="glowbtn" type="submit" name="ToDoApp">To Do App</button>
             </form>
+            </div>
+
         </div>
     </main>
 
-    <footer>Team Alpha Dogs 2023 &copy;</footer>
+    <footer>Team Cyber Dogs 2023 &copy;</footer>
 </body>
 </html>
