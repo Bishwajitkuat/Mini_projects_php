@@ -60,7 +60,7 @@
         <?php
         if (isset($_POST['speedSubmit'])) {
             $kmh = $_POST['kmhToMs'];
-            $ms = $kmh / 3.6;
+            $ms = round($kmh / 3.6, 2);
             echo "<p>$kmh km/h = $ms m/s</p>";
         }
         ?>
@@ -72,7 +72,7 @@
         <?php
         if (isset($_POST['knotsSubmit'])) {
             $kmh = $_POST['kmhToKnots'];
-            $knots = $kmh / 1.852;
+            $knots = round($kmh / 1.852, 2);
             echo "<p>$kmh km/h = $knots knots</p>";
         }
         ?>
