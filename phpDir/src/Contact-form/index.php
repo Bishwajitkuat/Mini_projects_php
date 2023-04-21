@@ -68,27 +68,21 @@ function given_info($data)
       <div class="form-items">
         <label for="name" class="list">Name</label>
         <input type="text" class="form-input" id="name" name="name" value="" required>
-       <?php echo $nameError; ?>
-
       </div>
 
       <div class="form-items">
         <label for="email" class="list">Email</label>
         <input type="email" class="form-input" id="email" name="email" value="" required>
-        <?php echo $emailError; ?>
-
       </div>
 
       <div class="form-items">
         <label for="subject" class="list">Subject</label>
         <input type="text" class="form-input" id="subject" name="subject" value="" required></input>
-        <?php echo $subjectError; ?>
       </div>
 
       <div class="form-items">
         <label for="message" class="list">Message</label>
         <textarea class="form-input" rows="5" cols="45" id="message" name="message" value="" required></textarea>
-        <?php echo $messageError; ?>
       </div>
 
       <button type="submit" >SEND</button>
@@ -96,7 +90,7 @@ function given_info($data)
 
 
   </div>
-<footer>Team Alpha Dogs 2023 &copy;</footer>
+<footer>Team Cyber Dogs 2023 &copy;</footer>
 </body>
 </html>
 

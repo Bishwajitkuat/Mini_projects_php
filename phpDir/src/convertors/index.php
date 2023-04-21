@@ -134,6 +134,6 @@ if (isset($_POST['reset'])) {
 
 </main>
 
-<footer>Team Alpha Dogs 2023 &copy;</footer>
+<footer>Team Cyber Dogs 2023 &copy;</footer>
 </body>
 </html>
